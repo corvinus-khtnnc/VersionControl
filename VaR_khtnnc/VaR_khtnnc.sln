@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaR_khtnnc", "VaR_khtnnc\VaR_khtnnc.csproj", "{241ED226-65A3-493C-8A3C-77F266236AEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{241ED226-65A3-493C-8A3C-77F266236AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241ED226-65A3-493C-8A3C-77F266236AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241ED226-65A3-493C-8A3C-77F266236AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241ED226-65A3-493C-8A3C-77F266236AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BCAB2CB-88FB-4477-976C-9796455224B2}
+	EndGlobalSection
+EndGlobal
