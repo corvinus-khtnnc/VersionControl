@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using webszolgaltatas_khtnnc.Entities;
 using webszolgaltatas_khtnnc.MnbServiceReference;
 
 namespace webszolgaltatas_khtnnc
 {
     public partial class Form1 : Form
     {
-        
+        BindingList<RateData> Rates = new BindingList<RateData>();
 
         public Form1()
         {
             InitializeComponent();
             webszhivas();
+
+            dataGridView1.DataSource = Rates;
         }
 
         private void webszhivas()
