@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using webszolgaltatas_khtnnc.Entities;
 using webszolgaltatas_khtnnc.MnbServiceReference;
 
@@ -20,8 +21,9 @@ namespace webszolgaltatas_khtnnc
         {
             InitializeComponent();
             webszhivas();
-
+            
             dataGridView1.DataSource = Rates;
+            xmlfeldolg();
         }
 
         private void webszhivas()
@@ -38,6 +40,30 @@ namespace webszolgaltatas_khtnnc
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
+        }
+
+        private void xmlfeldolg()
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                Rates.Add(rate);
+
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+
+                var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                var value = decimal.Parse(childElement.InnerText);
+                if (unit != 0)
+                    rate.Value = value / unit;
+            }
+
+
         }
         
     }
