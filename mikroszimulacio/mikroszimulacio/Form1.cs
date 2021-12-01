@@ -27,7 +27,7 @@ namespace mikroszimulacio
             Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
-            Simulation();
+            
         }
 
         private void Simulation()
@@ -142,6 +142,11 @@ namespace mikroszimulacio
                     Population.Add(újszülött);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Simulation();
         }
     }
 }
